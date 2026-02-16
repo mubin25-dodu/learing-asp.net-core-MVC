@@ -12,3 +12,4 @@ E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Lab
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Lab\practice\linq\obj\Debug\net10.0\linq.pdb
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Lab\practice\linq\obj\Debug\net10.0\linq.genruntimeconfig.cache
 E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Lab\practice\linq\obj\Debug\net10.0\ref\linq.dll
+E:\OneDrive - American International University-Bangladesh\uni\10 sem\A .NET\Lab\practice\linq\obj\Debug\net10.0\linq.sourcelink.json
