@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1>Welcome</h1>
+    @if (ViewBag.UserId != null)
+    {
+        <p>User ID is: @ViewBag.UserId</p>
+    }
+    else
+    {
+        <p>No user ID provided</p>
+    }
+</div>
