@@ -18,23 +18,29 @@
                             <div class="col-md-6">
                                 <label asp-for="StudentName" class="form-label">Student Name</label>
                                 <input asp-for="StudentName" class="form-control" id="studentName" placeholder="Enter full name">
+                                <span asp-validation-for="StudentName" class="text-danger"></span>
                             </div>
 
                             <div class="col-md-6">
                                 <label asp-for="StudentEmail" class="form-label">Email Address</label>
                                 <input asp-for="StudentEmail" class="form-control" id="studentEmail" placeholder="Enter email">
+                                <span asp-validation-for="StudentEmail" class="text-danger"></span>
+
                             </div>
 
                             <div class="col-md-6">
                                 <label asp-for="StudentPhone" class="form-label">Phone Number</label>
                                 <input asp-for="StudentPhone"  class="form-control" id="studentPhone"
                                        placeholder="Enter phone number">
+                                <span asp-validation-for="StudentPhone" class="text-danger"></span>
+
                             </div>
 
                             <div class="col-md-6">
                                 <label asp-for="StudentCGPA"  class="form-label">CGPA</label>
-                                <input asp-for="StudentCGPA"  step="0.01" min="0" max="4" class="form-control" id="studentCgpa"
+                                <input asp-for="StudentCGPA"  step="0.01" min="0" max="4" class="form-control" id="studentCgpa
                                        placeholder="Enter CGPA">
+                                <span asp-validation-for="StudentCGPA" class="text-danger"></span>
                             </div>
                         </div>
 
