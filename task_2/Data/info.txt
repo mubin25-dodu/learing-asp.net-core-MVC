@@ -1,0 +1,27 @@
+Library:
+
+Microsoft.EntityFrameworkCore.SqlServer 
+
+Microsoft.EntityFrameworkCore.Design 
+
+Microsoft.EntityFrameworkCore.Tools 
+
+Microsoft.EntityFrameworkCore 
+
+Db Path:
+
+"ConnectionStrings": {
+
+  "TestDbContext": "Data Source=DESKTOP-02N7D80;Initial Catalog=atp2db;TrustServerCertificate=True;Integrated Security=True;"
+
+} 
+
+Command:
+
+1. dotnet tool install --global dotnet-ef 
+
+2. Scaffold-DbContext "Name=studentsDBContext" Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Data/Entities
+
+builder.Services.AddDbContext<Atp2dbContext>(
+opt => opt.UseSqlServer(builder.Configuration.
+GetConnectionString("atp2dbContext")));
