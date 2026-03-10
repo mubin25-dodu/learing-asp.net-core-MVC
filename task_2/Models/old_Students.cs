@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace task_2.Models
 {
-    public class Students
+    public class old_Students
     {
         [Required]
         [SID]
