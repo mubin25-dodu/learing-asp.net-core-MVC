@@ -1,4 +1,19 @@
 @model List<StudentInfo>
+@if(TempData["success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}else if(TempData["error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
 <table class="table table-striped table-hover">
     <thead>
         <tr>
@@ -18,10 +33,9 @@
             <td>@student.Phone</td>
             <td>@student.Cgpa</td>
             <td>
-            <button asp-action="Edit" asp-route-id="@student.Sid" class="btn btn-sm btn-primary">Edit</button>
-            <a asp-action="Delete" sid="@student.Sid" asp-route-id="@student.Sid" 
-            class="btn btn-sm btn-danger dltbtn">Delete</a>
-            <button asp-action="Details" asp-route-id="@student.Sid" class="btn btn-sm btn-info">Details</button>
+            <a asp-route-id="@student.Sid" class="btn btn-sm btn-primary">Edit</a>
+            <a asp-action="Delete" asp-route-id="@student.Sid" class="btn btn-sm btn-danger dltbtn">Delete</a>
+            <a asp-route-id="@student.Sid" class="btn btn-sm btn-info">Details</a>
             </td>
         </tr>
         }
@@ -29,20 +43,14 @@
         }
 </table>
 
-
-
-
 <script>
     let deleteButtons = document.querySelectorAll('.dltbtn');
     if(deleteButtons){
         deleteButtons.forEach(button=>{
             button.addEventListener('click', function(e) {
-                console.log("pressed", this.attributes['sid'].value);
                 if(!confirm("Are you sure you want to delete this student?")) {
                     e.preventDefault();
-                }
-                else{
-                    button.submit();
+                    console.log("Deletion cancelled");
                 }
             });
         });

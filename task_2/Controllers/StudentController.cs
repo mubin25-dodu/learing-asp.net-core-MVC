@@ -28,10 +28,15 @@ namespace task_2.Controllers
         {
             if (ModelState.IsValid)
             {
+                var exist = _context.StudentInfos.Any(s=> s.Email == students.Email);
+               if(!exist){
                 _context.StudentInfos.Add(students);
-                Console.WriteLine("Student added successfully");
                 _context.SaveChanges();
-                return RedirectToAction("listOfstudents");
+                TempData["success"] ="user added";
+               } else {
+                TempData["error"] ="user already exixts";
+               
+               }
             }
 
             return View();
@@ -42,24 +47,24 @@ namespace task_2.Controllers
         [Route("students")]
         public IActionResult listOfstudents()
         {
-
             var Data = _context.StudentInfos.ToList();
-
             return View(Data);
             //}
         }
 
-        [HttpPost]
+        [HttpGet("listOfstudents")]
         public IActionResult Delete(int id)
         {
             if (ModelState.IsValid == false)
             {
                 return RedirectToAction("AddStudents");
             }
-             var std=_context.StudentInfos.Find(id);
+            
+            var std=_context.StudentInfos.Find(id);
             if( std != null){
              _context.StudentInfos.Remove(std);
              _context.SaveChanges();
+             TempData["success"]="User deleted ";
             }
             return RedirectToAction("listOfstudents");
         }

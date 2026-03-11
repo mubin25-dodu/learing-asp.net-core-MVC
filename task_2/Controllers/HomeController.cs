@@ -15,7 +15,7 @@ namespace task_2.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("AddStudents", "Student");
+            return View();
         }
 
         public IActionResult Privacy()
